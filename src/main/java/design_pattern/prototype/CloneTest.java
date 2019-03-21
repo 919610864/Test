@@ -9,6 +9,8 @@ public class CloneTest {
         try {
             ConcretePrototype copy = (ConcretePrototype) cp.clone();
             System.out.println(copy.getAge());
+            copy.setAge(18);
+            System.out.println(copy.getAge());
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
