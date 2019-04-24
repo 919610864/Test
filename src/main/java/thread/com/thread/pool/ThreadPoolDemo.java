@@ -1,11 +1,11 @@
 package thread.com.thread.pool;
 
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ThreadPoolDemo {
+
+    ExecutorService executorService = Executors.newFixedThreadPool(10);
 
     public static void main(String[] args) {
         ThreadPoolExecutor pool =  new ThreadPoolExecutor(2, 3, 3L,
