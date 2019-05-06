@@ -32,15 +32,11 @@ public class MyThread extends Thread {
         Lock lock = new ReentrantLock();
 
         MyThread t1 = new MyThread("t1", lock);
-        MyThread t2 = new MyThread("t2", lock);
-        MyThread t3 = new MyThread("t3", lock);
-        MyThread t4 = new MyThread("t4", lock);
-        MyThread t5 = new MyThread("t5", lock);
         t1.start();
-        t2.start();
-        t3.start();
-        t4.start();
-        t5.start();
+        t1.interrupt();
+        Thread.currentThread().interrupt();
+        System.out.println("第一次调用返回值："+Thread.currentThread().isInterrupted());
+        System.out.println("第二次调用返回值："+Thread.interrupted());
     }
 }
 
