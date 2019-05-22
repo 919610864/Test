@@ -1,6 +1,7 @@
 package thread.timer;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Timer;
 
 public class TestTask {
@@ -13,9 +14,10 @@ public class TestTask {
         //设置任务的执行，1秒后开始，每2秒执行一次
        // t.schedule(task, 1000,2000);
 
-        Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.MINUTE, 30);
-        System.out.println(cal.getTime());
-        t.schedule(task, cal.getTime() , 2000);
+//        Calendar cal = Calendar.getInstance();
+//        cal.set(Calendar.MINUTE, 30);
+//        System.out.println(cal.getTime());
+        long responseCacheUpdateIntervalMs = 1000;
+        t.schedule(task, new Date(System.currentTimeMillis()+2000), responseCacheUpdateIntervalMs);
     }
 }
