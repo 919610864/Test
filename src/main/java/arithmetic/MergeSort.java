@@ -1,7 +1,5 @@
 package arithmetic;
 
-import java.util.ArrayList;
-
 /**
  * 归并排序
  * time compliexity:o(nlongn)
