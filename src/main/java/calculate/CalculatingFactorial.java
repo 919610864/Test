@@ -1,5 +1,8 @@
 package calculate;
 
+/**
+ * 倒叙输出数字 例：输入1234，输出4321
+ */
 public class CalculatingFactorial {
 
     public int reverseNum(int paraNum){
