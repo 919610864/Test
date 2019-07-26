@@ -1,4 +1,4 @@
-package thread;
+package thread.lock.deadLock;
 
 public class DeadLockDemo {
     private static String A = "A";
