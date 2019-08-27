@@ -21,7 +21,7 @@ public class SemaphoreDemo {
                 public void run() {
                     try {
                         semaphore.acquire();
-                        System.out.println("save data");
+                        System.out.println(Thread.currentThread().getName()+"save data");
                         Thread.sleep(2000);
                         semaphore.release();
                     } catch (InterruptedException e) {

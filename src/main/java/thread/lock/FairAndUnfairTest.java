@@ -69,7 +69,7 @@ private static class ReentrantLock2 extends ReentrantLock {
 
     @Override
     public Collection<Thread> getQueuedThreads() {
-        List<Thread> arrayList = new ArrayList<>(super.getQueuedThreads());
+        List<Thread> arrayList = new ArrayList<Thread>(super.getQueuedThreads());
         Collections.reverse(arrayList);
         return arrayList;
     }

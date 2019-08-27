@@ -8,7 +8,7 @@ import java.util.List;
 public class MyListTest {
     public static void main(String[] args) {
         //策略模式
-        List<Long> number = new ArrayList<>();
+        List<Long> number = new ArrayList<Long>();
         Collections.sort(number, new Comparator<Long>() {
             @Override
             public int compare(Long o1, Long o2) {

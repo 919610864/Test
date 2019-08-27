@@ -1,6 +1,5 @@
 package thread.lock;
 
-import java.util.Random;
 import java.util.concurrent.locks.Lock;
 
 public class Woker extends Thread {
