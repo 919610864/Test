@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * volatile保证了可见性,顺序性
+ */
 public class VolatileDemo {
 
     private volatile int i = 0;

@@ -2,6 +2,9 @@ package thread.lock.condition;
 
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ *reen
+ */
 public class ReenterLock implements Runnable {
 
     public static ReentrantLock reentrantLock = new ReentrantLock();
