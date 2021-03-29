@@ -111,4 +111,18 @@ public class ReflectTest {
 //        }
     }
 
+    /**
+     * 实例化对象方式
+     */
+    public void instaceObj() throws Exception {
+        //1.反射
+        Class c1 = Class.forName("reflect.User");
+        Object obj = c1.newInstance();
+
+        //2.new Obj
+        User user = new User();
+
+        //3.序列化 ,反序列化 User需要implements Serializable
+    }
+
 }
