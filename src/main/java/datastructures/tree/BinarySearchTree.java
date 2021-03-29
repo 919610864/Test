@@ -1,5 +1,11 @@
 package datastructures.tree;
 
+/**
+ * 二叉查找树（Binary Search Tree），（又：二叉搜索树，二叉排序树）
+ * 规则:1.左子节点始终小于根节点
+ * 2.又子节点树始终大于根节点
+ * @param <AnyType>
+ */
 public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
 
     private static class BinaryNode<AnyType> {

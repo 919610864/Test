@@ -4,7 +4,7 @@ public class Helper {
 
 
     public void handle(int count, char c) {
-        System.out.println(" Handle ("+count+","+c+") Begin");
+        System.out.println(Thread.currentThread().getName()+" :Handle ("+count+","+c+") Begin");
         for(int i = 0;i<count;i++){
             slowly();
             System.out.print(c);

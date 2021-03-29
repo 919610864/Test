@@ -35,7 +35,7 @@ public class Data {
     }
 
     private void doSave() throws IOException {
-        System.out.println(Thread.currentThread().getName() + "calls doSave, content = " + content);
+        System.out.println(Thread.currentThread().getName() + ": calls doSave, content = " + content);
         Writer writer = new FileWriter(fileName);
         writer.write(content);
         writer.close();

@@ -1,9 +1,12 @@
 package thread.synchronizedtest;
 
+import java.util.concurrent.locks.LockSupport;
+
 /**
- * Integer ÊôÓÚ²»¿É±ä¶ÔÏó£¬Ò»µ«¶ÔÏó±»´´½¨£¬¾Í²»¿ÉÄÜ±»ÐÞ¸Ä
- * Ê¹ÓÃi++ ===> i=Integer.valueOf(i.intValue()+1);
- * ´ËÊ±ÐèÒªsynchronized (i)¸Ä³Ésynchronized (instance)¼´¿É
+ * Integer ï¿½ï¿½ï¿½Ú²ï¿½ï¿½É±ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ó±»´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½ï¿½Ü±ï¿½ï¿½Þ¸ï¿½
+ * Ê¹ï¿½ï¿½i++ ===> i=Integer.valueOf(i.intValue()+1);
+ * ï¿½ï¿½Ê±ï¿½ï¿½Òªsynchronized (i)ï¿½Ä³ï¿½synchronized (instance)ï¿½ï¿½ï¿½ï¿½
+ * -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly
  */
 public class BadLockOnInteger implements Runnable {
 
@@ -15,6 +18,7 @@ public class BadLockOnInteger implements Runnable {
         for (int j=0;j<10000;j++){
             synchronized (instance){
                 i++;
+                System.out.println("çº¿ç¨‹:"+Thread.currentThread().getName()+";i="+i);
             }
         }
     }

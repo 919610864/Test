@@ -1,13 +1,14 @@
 package arithmetic;
 
-import collection.ConcurrentHashMapDemo;
-
 import java.util.Arrays;
 
+/**
+ * 找出重复数据即可
+ */
 public class Solution {
 
     public static void main(String[] args) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         int [] nums = new int[]{2, 3, 1, 0, 2, 5, 3};
+        int [] nums = new int[]{2, 3, 1, 0, 2, 5, 3};
         findRepeatNumber(nums);
     }
 
@@ -20,10 +21,10 @@ public class Solution {
         Arrays.sort(nums);
         int num = -1;
         for (int i = 0;i<nums.length;i++){
-            if(i != nums[i]){
-                num = nums[i];
+            if(num == nums[i]){
                 break;
             }
+            num = nums[i];
         }
         return num;
     }

@@ -3,17 +3,18 @@ package arithmetic;
 import java.io.File;
 
 /**
- * 使用递归，打印目录结构
- * 1.先序遍历
- * 2.后序遍历
+ * using recursion,print the directory stru
+ * 1.first order convenient
+ * 2.last order convenient
  */
 public class Recursion {
 
     public static void main(String[] args) {
-        getFileListName("D:\\360安全浏览器下载");
+        Recursion recursion = new Recursion();
+        recursion.getFileListName("D:");
     }
 
-    private static void getFileListName(String path) {
+    private void getFileListName(String path) {
         File file = new File(path);
         File [] files = file.listFiles();
         if(files!=null){

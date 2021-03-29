@@ -13,8 +13,7 @@ public class LockConditionTest {
     // 已经生产的产品数
     public static volatile int hasProduceCount = 0;
     // 已经消费的产品数
-    public static
-    volatile int hasConsumeCount = 0;
+    public static volatile int hasConsumeCount = 0;
     // 容器最大容量
     public static int containerSize = 3;
     // 使用公平策略的可重入锁，便于观察演示结果
