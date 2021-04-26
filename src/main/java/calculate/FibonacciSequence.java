@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  * 斐波那契数列的通项f(n),已经f1=1,f2=1,以后每一项都是前两项的和
+ * f(n) = f(n-1) + f(n-2)
  */
 public class FibonacciSequence {
 

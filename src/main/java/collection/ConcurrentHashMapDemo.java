@@ -1,10 +1,17 @@
 package collection;
 
+import java.util.Vector;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Semaphore;
 
 public class ConcurrentHashMapDemo {
 
+
+
     public static void main(String[] args) {
+
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
         concurrentHashMap.put("a","a");
         concurrentHashMap.put("b","b");
@@ -26,5 +33,10 @@ public class ConcurrentHashMapDemo {
         concurrentHashMap.put("bb","bb");
         concurrentHashMap.put("bc","bc");
         concurrentHashMap.put("bd","bd");
+        Semaphore semaphore = new Semaphore(10);
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(10);
+        CountDownLatch countDownLatch = new CountDownLatch(10);
+
+
     }
 }
