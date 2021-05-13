@@ -1,4 +1,7 @@
 package arithmetic;
+
+import java.util.Arrays;
+
 /**
  * 冒泡排序
  * 比较相邻的元素。如果第一个比第二个大，就交换他们两个。
@@ -10,7 +13,7 @@ package arithmetic;
 public class BubbleSort {
 
     public static void main(String[] args) {
-        bubbleSort(new int[]{4,10,1,5,2,10,9,3,13,7});
+        bubbleSort1(new int[]{4,10,1,5,2,10,9,3,13,7});
     }
 
     public static void bubbleSort(int[] numbers)
@@ -29,5 +32,23 @@ public class BubbleSort {
             }
         }
         System.out.println(numbers.toString());
+    }
+
+    /**
+     * 不借助临时变量
+     * @param numbers
+     */
+    public static void bubbleSort1(int[] numbers){
+        int size = numbers.length;
+        for(int i = 0;i < size-1;i++){
+            for(int j = 0;j< size - 1-i;j++){
+                if(numbers[j] > numbers[j+1]){
+                    numbers[j] = numbers[j] + numbers[j+1];
+                    numbers[j+1] = numbers[j] - numbers[j+1];
+                    numbers[j] = numbers[j] - numbers[j+1];
+                }
+            }
+        }
+        System.out.println(Arrays.toString(numbers));
     }
 }
