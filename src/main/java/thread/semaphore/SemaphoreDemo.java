@@ -13,7 +13,7 @@ public class SemaphoreDemo {
     //定义线程池数量
     private static ExecutorService executorService = Executors.newFixedThreadPool(30);
     //定义信号量数量
-    private static Semaphore semaphore = new Semaphore(10);
+    private static Semaphore semaphore = new Semaphore(1);
 
     public static void main(String[] args) {
         for (int i = 0;i<ThREAD_COUNT;i++){
