@@ -1,17 +1,17 @@
 package arithmetic.two;
 
 /**
- * 自定义集合,以数组
+ *
  */
 public class ArrayTest {
 	
-	private int size;		//数组的长度
+	private int size;		//
 	private int data[];
-	private int index;		//当前已经存的数据大小
+	private int index;		//
 	
-	public ArrayTest(int size){		//数组的初始化过程
+	public ArrayTest(int size){		//
 		this.size = size;
-		data = new int[size];		//分配的内存空间{0,0,0,0,0}
+		data = new int[size];
 		index = 0;
 	}
 	
@@ -23,26 +23,21 @@ public class ArrayTest {
 		System.out.println();
 	}
 
-	/**
-	 * 插入
-	 * @param loc:下标
-	 * @param n:元素
-	 */
-	public void insert(int loc,int n){		//时间复杂度 O(n);
+
+	public void insert(int loc,int n){		// O(n);
 		if(index ++ < size){
-			for(int i = size - 1; i > loc ; i --){	//为什么不能写size 0~size-1 如果loc是0 O(n),O(1)=>O(n)
-				data[i] = data[i - 1];	//把数据往后移一个
+			for(int i = size - 1; i > loc ; i --){
+				data[i] = data[i - 1];	//
 			}
 			data[loc] = n;
 		}
-		//扩容 会把size*2 0.75 
 	}
 	public void delete(int loc){	//O(n)
 		for(int i = loc ; i < size ; i++){
-			if(i != size - 1){		//怕越界所以加一个判断
+			if(i != size - 1){		//
 				data[i] = data[i + 1];
 			}else{
-				data[i] = 0;			//默认为0 就是没存数据的
+				data[i] = 0;			//
 			}
 		}
 		index -- ;

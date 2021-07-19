@@ -1,11 +1,11 @@
 package arithmetic.two;
 
 /**
- * 摘自网上 约瑟夫  使用单向循环链表
+ *
  */
 public class Yuesefu {
     /**
-     * 构建循环链表
+     * 锟斤拷锟斤拷循锟斤拷锟斤拷锟斤拷
      * @param totalCol
      * @return
      */
@@ -31,17 +31,17 @@ public class Yuesefu {
         int m = 5 ;
         m %= n ;
         node head = createNodes(total);
-        //判断循环链表是不是只剩下一个节点
+        //锟叫讹拷循锟斤拷锟斤拷锟斤拷锟角诧拷锟斤拷只剩锟斤拷一锟斤拷锟节碉拷
         while(head.next != head){
             for(int i = 1 ; i < m-1 ; i++){
                 head = head.next;
             }
             node temp = head.next;
-            System.out.println("第"+(++sort)+"个自杀的为："+temp.node);
+            System.out.println(""+(++sort)+""+temp.node);
             head.next = temp.next;
             head = head.next;
         }
-        System.out.println("第"+(++sort)+"个自杀的为："+head.node);
+        System.out.println(""+(++sort)+""+head.node);
     }
 
     public static void main(String[] args) {

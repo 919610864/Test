@@ -1,4 +1,4 @@
-package design_pattern.singleton;
+package design_pattern.singleton.lazy;
 
 /**
  * 懒汉模式：延迟加载，只有真正使用的时候，才开始实例化
@@ -6,8 +6,8 @@ package design_pattern.singleton;
  * double check + synchronize(加锁优化)
  * JIT，CPU可能对指令重排序，导致使用到尚未初始化对象 解决方法：使用volatile 防止指令重排
  *
- * javap -g LazySingleton.java 生成字节码文件
- * javac -v -p LazySingleton.class > LazySingleton 反编译
+ * javac -g LazySingleton.java 生成字节码文件
+ * javap -v -p LazySingleton.class > LazySingleton 反编译
  *
  */
 public class LazySingleton {
@@ -17,7 +17,9 @@ public class LazySingleton {
 
     //私有构造函数
     private LazySingleton(){
-
+//        if(instance!=null){
+//            throw new RuntimeException("无法通过反射获取单例实例");
+//        }
     }
 
     /**

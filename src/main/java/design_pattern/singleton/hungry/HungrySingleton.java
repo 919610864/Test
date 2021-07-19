@@ -1,4 +1,7 @@
-package design_pattern.singleton;
+package design_pattern.singleton.hungry;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * 饿汉模式
@@ -22,11 +25,25 @@ public class HungrySingleton {
     private static HungrySingleton hungrySingleton = new HungrySingleton();
 
     private HungrySingleton(){
-
+        if(hungrySingleton!=null){
+            throw new RuntimeException("无法通过反射获取单例实例");
+        }
     }
 
     public static HungrySingleton getInstance(){
         return hungrySingleton;
+    }
+
+    public static void main(String[] args) throws InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        //通过反射破坏单例类
+        Constructor<HungrySingleton> declaredConstructor = HungrySingleton.class.getDeclaredConstructor();
+        declaredConstructor.setAccessible(true);
+        HungrySingleton hungrySingleton1 = declaredConstructor.newInstance();
+        HungrySingleton hungrySingleton2 = HungrySingleton.getInstance();
+        System.out.println(hungrySingleton1 == hungrySingleton2);
+
+
+
     }
 
 
