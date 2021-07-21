@@ -17,8 +17,7 @@ public class RedisTest {
 
     @Test
     public void testAdd(){
-        Long add = stringRedisTemplate.opsForSet().add("1", "111");
-        System.out.println(add);
-
+        //Long add = stringRedisTemplate.opsForSet().add();
+        //System.out.println(add);
     }
 }
