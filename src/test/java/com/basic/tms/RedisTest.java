@@ -7,12 +7,17 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
+/**
+ * redis test class
+ */
 @RunWith(JMockit.class)
 public class RedisTest {
 
     @Mocked
     @Injectable
     private StringRedisTemplate stringRedisTemplate;
+
+
 
 
     @Test
