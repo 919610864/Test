@@ -2,8 +2,7 @@ package collection;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.BlockingQueue;
 
 /***
@@ -41,4 +40,61 @@ public class ArrayListTest {
     public void testArrayListAndLinkedList(){
 
     }
+
+
+    /**
+     * test contain method of ArrayList
+     */
+    @Test
+    public void testContainOfList(){
+        List<Long> list = new ArrayList<>();
+        for(int i = 0;i<100000;i++){
+            list.add(Long.valueOf(i));
+        }
+        List<Long> list2 = new ArrayList<>();
+        for(int i = 1;i<10000;i++){
+            Random random = new Random(10000);
+            list2.add(random.nextLong());
+        }
+        long beginTime = System.currentTimeMillis();
+        List<Long> list3 = new ArrayList<>();
+        for(int i = 0;i<list2.size();i++){
+            if(list.contains(list2.get(i))){
+                list3.add(list2.get(i));
+            }
+        }
+
+        long endTime = System.currentTimeMillis();
+        System.out.println((endTime-beginTime));
+
+    }
+
+    /**
+     * test contain method of hashset
+     */
+    @Test
+    public void testContainOfHashSet(){
+        Set<Long> list = new HashSet<>();
+        for(int i = 0;i<100000;i++){
+            list.add(Long.valueOf(i));
+        }
+        List<Long> list2 = new ArrayList<>();
+        for(int i = 1;i<10000;i++){
+            Random random = new Random(10000);
+            list2.add(random.nextLong());
+        }
+        long beginTime = System.currentTimeMillis();
+        List<Long> list3 = new ArrayList<>();
+        for(int i = 0;i<list2.size();i++){
+            if(list.contains(list2.get(i))){
+                list3.add(list2.get(i));
+            }
+        }
+
+        long endTime = System.currentTimeMillis();
+        System.out.println((endTime-beginTime));
+
+    }
+
+
 }

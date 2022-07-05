@@ -3,7 +3,6 @@ package arithmetic.stack;
 import java.util.Stack;
 
 /**
- * 使用栈数据结构实现浏览器的前进后退
  */
 public class BackAndGo {
 
@@ -17,7 +16,7 @@ public class BackAndGo {
         }
         String page = (String) stack2.pop();
         stack1.push(page);
-        System.out.println("移动元素:"+page);
+        System.out.println("锟狡讹拷元锟斤拷:"+page);
         return  page;
     }
 
@@ -28,7 +27,7 @@ public class BackAndGo {
         }
         String page = (String) stack1.pop();
         stack2.push(page);
-        System.out.println("当前页面是:"+page);
+        System.out.println("锟斤拷前页锟斤拷锟斤拷:"+page);
         return page;
 
     }
@@ -45,7 +44,7 @@ public class BackAndGo {
         backAndGo.open("C");
         backAndGo.open("D");
         //sort a b c d
-        // sort a b c  弹出d
+        // sort a b c  锟斤拷锟斤拷d
         backAndGo.back();
         // sort a b
         backAndGo.back();
