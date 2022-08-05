@@ -1,17 +1,17 @@
 package arithmetic;
 
 /**
- * ¶þ·Ö·¨²åÈëÅÅÐò
+ * ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 public class BinaryInsertSort {
 
     public static void main(String[] args) {
         int[] a = {49, 38, 65, 97, 176, 213, 227, 49, 78, 34, 12, 164, 11, 18, 1};
-        System.out.println("ÅÅÐòÖ®Ç°£º");
+        System.out.println("ï¿½ï¿½ï¿½ï¿½Ö®Ç°ï¿½ï¿½");
         show(a);
         sort(a);
         System.out.println();
-        System.out.println("ÅÅÐòÖ®ºó£º");
+        System.out.println("ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½");
         show(a);
     }
 
@@ -23,7 +23,7 @@ public class BinaryInsertSort {
     }
 
     /**
-     * ¶þ·Ö²åÈëÅÅÐòËã·¨
+     * ï¿½ï¿½ï¿½Ö²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
      * @param a
      */
     private static void sort(int [] a){

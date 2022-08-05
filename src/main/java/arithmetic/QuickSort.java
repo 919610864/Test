@@ -1,8 +1,11 @@
 package arithmetic;
 
+import java.util.Arrays;
+
 /**
  * 快速排序
- * 时间复杂度O(nlogn)
+ * 平均时间复杂度O(nlogn)
+ * 实现思路：1.找一个基准数
  */
 public class QuickSort {
 
@@ -10,6 +13,7 @@ public class QuickSort {
         int [] array = new int [] {3,7,10,17,9,6,2};
         quickSort1(array,0,array.length-1);
         System.out.println(array.toString());
+        //Arrays.sort();
     }
 
     public static void quickSort1(int[] array, int start, int end){

@@ -1,8 +1,10 @@
 package arithmetic;
 
+import java.util.Arrays;
+
 /**
  * 归并排序
- * time compliexity:o(nlongn)
+ * time compliexity:O(nlogn)
  */
 public class MergeSort {
 
@@ -110,20 +112,61 @@ public class MergeSort {
 
 
     public static void main(String[] args) {
-        int i;
-        int a[] = {80, 30, 60, 40, 20, 10, 50, 70};
+//        int i;
+//        int a[] = {80, 30, 60, 40, 20, 10, 50, 70,44};
 
-        System.out.printf("before sort:");
-        for (i = 0; i < a.length; i++)
-            System.out.printf("%d ", a[i]);
-        System.out.printf("\n");
+        int data[] = { 9, 5, 6, 8, 0, 3, 7, 1 };
+        mergeSort(data, 0, data.length);
+        System.out.println(Arrays.toString(data));
 
-        mergeSortUp2Down(a, 0, a.length - 1);        // 归并排序(从上往下)
-        //mergeSortDown2Up(a);                    // 归并排序(从下往上)
+//        System.out.printf("before sort:");
+//        for (i = 0; i < a.length; i++)
+//            System.out.printf("%d ", a[i]);
+//        System.out.printf("\n");
+//
+//        mergeSortUp2Down(a, 0, a.length - 1);        // 归并排序(从上往下)
+//        //mergeSortDown2Up(a);                    // 归并排序(从下往上)
+//
+//        System.out.printf("after  sort:");
+//        for (i = 0; i < a.length; i++)
+//            System.out.printf("%d ", a[i]);
+//        System.out.printf("\n");
+    }
 
-        System.out.printf("after  sort:");
-        for (i = 0; i < a.length; i++)
-            System.out.printf("%d ", a[i]);
-        System.out.printf("\n");
+    public static void mergeSort(int array[],int begin,int end){
+        if (begin < end){
+            int mid = (begin + end)/2;
+            //左边 9  0  4
+            mergeSort(array,0,(end-begin)/2);
+            //右边 5 8
+            mergeSort(array,(end-begin)/2+1,end - 1);
+            //然后合并
+            mergeByMyself(array,begin,mid,end);
+        }
+
+
+    }
+
+    private static void mergeByMyself(int[] array, int begin, int mid, int end) {
+        int tmp [] = new int[end - begin - 1]; //借助一个临时数组存储
+        //第一个数组第一个
+        int point1 = begin;
+        //第二个数组的第一个
+        int point2 = mid + 1;
+        int loc = point1; //记录临时数据的位置
+        while (point1<=mid && mid<end){
+            if(array[point1]<=array[point2]){
+                tmp[loc] = array[point1++];
+            }else {
+                tmp[loc] = array[point2];
+                point2++;
+            }
+            loc ++;
+        }
+
+        //这样就行了吗？ no
+
+
+
     }
 }
